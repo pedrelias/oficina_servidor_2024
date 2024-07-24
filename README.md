@@ -1,7 +1,9 @@
 Para iniciar o projeto:
 
 1 - Ative o Apache e MySQL no painel de controle do XAMPP;
+
 2 - Acesse o localhost/phpmyadmin e crie uma database chamada "oficina";
+
 3 - Crie na database "oficina" uma tabela chamada "usuario" com o seguinte comando:
 
 CREATE TABLE usuario (
