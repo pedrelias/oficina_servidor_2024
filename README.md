@@ -7,11 +7,17 @@ Para iniciar o projeto:
 3 - Crie na database "oficina" uma tabela chamada "usuario" com o seguinte comando:
 
 CREATE TABLE usuario (
+
     id INT NOT NULL AUTO_INCREMENT,
+    
     nome VARCHAR(60),
+    
     email VARCHAR(60),
+    
     senha VARCHAR(60),
+    
     PRIMARY KEY (id)
+    
 );
 
 4 - Adicione os usuários no formulário e verifique na base de dados.
