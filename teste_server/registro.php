@@ -14,4 +14,10 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
+<br><br>
+<a href="index.php">
+<button> Voltar </button>
+</a>
+
 ?>
