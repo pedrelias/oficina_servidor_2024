@@ -1,18 +1,23 @@
 <?php
 include 'banco.php';
 
-$nome = $_POST['nome'] ;
-$email = $_POST['email'];
+// Recebe e sanitiza os dados do formulário
+$nome = trim($_POST['nome']);
+$email = trim($_POST['email']);
 $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+// Preparar a declaração SQL
+$stmt = $conn->prepare("INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)"); // ? é um placeholder para 
+                                                                                     // os dados que serão inseridos
+$stmt->bind_param("sss", $nome, $email, $senha);
 
-if ($conn->query($sql) === TRUE) {
+if ($stmt->execute() === TRUE) {
     $mensagem = "Novo usuário cadastrado com sucesso!";
 } else {
-    $mensagem = "Erro: " . $sql . "<br>" . $conn->error;
+    $mensagem = "Erro: " . $stmt->error;
 }
 
+$stmt->close();
 $conn->close();
 ?>
 <link rel="stylesheet" href="style.css">
