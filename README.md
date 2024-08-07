@@ -8,15 +8,13 @@ Para iniciar o projeto:
 
 CREATE TABLE usuario (
 
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     
     nome VARCHAR(60),
     
     email VARCHAR(60),
     
     senha VARCHAR(60),
-    
-    PRIMARY KEY (id)
     
 );
 
