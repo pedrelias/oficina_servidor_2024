@@ -14,7 +14,7 @@ CREATE TABLE usuario (
     
     email VARCHAR(60),
     
-    senha VARCHAR(60),
+    senha VARCHAR(60)
     
 );
 
